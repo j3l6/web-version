@@ -7,7 +7,7 @@ from exercises import xpath_exercise
 
 def test_xml_modification(tmp_path):
     output_file = tmp_path / "output_form.xml"
-    xpath_exercise.modify_xml("exercises/input_form.xml", str(output_file))
+    xpath_exercise.modifyXML("exercises/input_form.xml", str(output_file)) #I modify it, i use xpath_exercise.modifyXML insted xpath_exercise.modify_xml
 
     tree = etree.parse(str(output_file))
     root = tree.getroot()

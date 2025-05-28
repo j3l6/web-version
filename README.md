@@ -1,3 +1,9 @@
+
+
+# Note
+# I apologize because when i registered my user name in Google Forms for the first time, it took me approximatly 
+# 4 hours to finish, and the repo was closed u.u, thanks for your time.
+
 # Odoo Intern Technical Challenge
 
 ## Part 1: Python
