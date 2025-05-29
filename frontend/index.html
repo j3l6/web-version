@@ -32,6 +32,14 @@
             const productId = document.getElementById('manual-product').value;
             const coupon = document.getElementById('manual-coupon').value;
             
+            //lines added
+            if (coupon === "" || parseFloat(coupon) < 1 || parseFloat(coupon) > 99) {
+                alert("El descuento debe ser entre 1% y 99%");
+                couponInput.focus();
+                return;
+            }
+
+            
             const response = await fetch('/calculate-discount', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

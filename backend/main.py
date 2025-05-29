@@ -33,7 +33,15 @@ def get_products():
     return PRODUCTS
 
 @app.post("/calculate-discount")
+
 def calculate_discount(request: DiscountRequest):
+    if request.coupon is not None:
+        if request.coupon < 1 or request.coupon > 99:
+            raise HTTPException(
+                status_code=400,
+                detail="Enter value between 1% and 99%" #discount validation
+            )
+
     product = PRODUCTS[request.product_id]
     
     if request.coupon:
