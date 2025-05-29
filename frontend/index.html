@@ -71,10 +71,21 @@
 
         // Show result
         function showResult(result) {
+            
+            const formatPrice = (price) => {
+            // Convertir a número y formatear
+            const number = parseFloat(price);
+            return number.toLocaleString('es-ES', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+                });
+            };
+
+
             document.getElementById('result-product').textContent = result.product_name;
-            document.getElementById('result-original').textContent = `$${result.original_price}`;
+            document.getElementById('result-original').textContent = `$${formatPrice(result.original_price)}`;
             document.getElementById('result-discount').textContent = `${result.discount_rate}%`;
-            document.getElementById('result-final').textContent = `$${result.final_price}`;
+            document.getElementById('result-final').textContent = `$${formatPrice(result.final_price)}`;
             showView('result-view');
         }
 
