@@ -46,71 +46,105 @@ class DigitalProduct(Product):
 
 #Buy appliyng manual coupon
 def BuyWithCoupon():
-
     
     
-    print(f"\n1.- Laptop: $15,000")
-    print(f"\n2.- Smartphone: $30,000")
-    print(f"\n3.- Mouse: $500.00")
+    while True:
+        
+        print(":*****************************************")
+        print("*                                        *")
+        print("*                                        *")
+        print("*               Buy Product              *")
+        print("*                                        *")
+        print(":*****************************************")
+        print(f"\n1.- Laptop: $15,000")
+        print(f"\n2.- Smartphone: $30,000")
+        print(f"\n3.- Mouse: $500.00")
+        
+        try:
+            product = int(input(f"\nSelect a product: "))
+        except ValueError:
+            clear_screen() 
+            print("\nPlease enter a valid number.")
+            continue
+        
+        price = 0
+        
+        if product == 1:
+            product = "Laptop"
+            price = 15000
+            break
+        elif product == 2:
+            product = "Smartphone"
+            price = 30000
+            break
+        elif product == 3:
+            product = "Mouse"
+            price = 500
+            break
+        else:
+            clear_screen()
+            print("\nPlease enter a valid number.")
 
-  
-    #with more time, add number validation with "while" an except like main()
-    product = int(input(f"\nSelect a product: "))
-    price = 0
-   
-    if product == 1:
-        product = "Laptop"
-        price = 15000
-    elif product == 2:
-        product = "Smartphone"
-        price = 30000
-    elif product == 3:
-        product = "Mouse"
-        price = 500
-
+    
+    #add validation coupon < 0 or > 4
+    
     coupon = float(input(f"\nIntroduce % coupon: "))/100
-    
-
+      
     priceProduct = Product(product, price)
-    
+    clear_screen()
     print(f"El precio final de tu {product} es {priceProduct.get_discounted_price(coupon)}")
-
+    print("\nPlease enter a valid number.")
     input("\nPresiona Enter para regresar al menú...")
     clear_screen()
-    main()
+    return
 
     #Buy applying 20% coupon
 def Coupon20():
-
     
+    while True:
+        
+        print(":*****************************************")
+        print("*                                        *")
+        print("*                                        *")
+        print("*               Coupon 20%               *")
+        print("*                                        *")
+        print(":*****************************************")
+        print(f"\n1.- Laptop: $15,000")
+        print(f"\n2.- Smartphone: $30,000")
+        print(f"\n3.- Mouse: $500.00")
+        
+        try:
+            product = int(input(f"\nSelect a product: "))
+        except ValueError:
+            clear_screen() 
+            print("\nPlease enter a valid number.")
+            continue 
+        
     
-    print(f"\n1.- Laptop: $15,000")
-    print(f"\n2.- Smartphone: $30,000")
-    print(f"\n3.- Mouse: $500.00")
+        price = 0
 
-  
-
-    product = int(input(f"\nSelect a product: "))
-    price = 0
-    #with more time, add number validation with "while" an except
-    if product == 1:
-        product = "Laptop"
-        price = 15000
-    elif product == 2:
-        product = "Smartphone"
-        price = 30000
-    elif product == 3:
-        product = "Mouse"
-        price = 500
-
-
+        if product == 1:
+            product = "Laptop"
+            price = 15000
+            break
+        elif product == 2:
+            product = "Smartphone"
+            price = 30000
+            break
+        elif product == 3:
+            product = "Mouse"
+            price = 500
+            break
+        else:
+            clear_screen()
+            print("\nPlease enter a valid number.")
+            
     Digital = DigitalProduct(product, price)
-
-    
+    clear_screen()
     print(f"Final price of your {product} applying a 20% discount is {Digital.get_discounted_price()}")
     input("\nPresiona Enter para regresar al menú...")
     clear_screen()
-    main()
+    return
 
 
     
@@ -119,40 +153,53 @@ def Coupon20():
 
 def main():
 
-    print(":*****************************************")
-    print("*                                        *")
-    print("*                                        *")
-    print("*                 Welcome                *")
-    print("*                                        *")
-    print(":*****************************************")
-
-
+    
     while True:
+        
+        print(":*****************************************")
+        print("*                                        *")
+        print("*                                        *")
+        print("*                 Welcome                *")
+        print("*                                        *")
+        print("******************************************")
+        
         print(f"\nChose an option:")
 
         print(f"\n1.- Buy product with a coupon")
         print(f"\n2.- Buy product online 20% disscount")
         print(f"\n0.- Press 0 to finish")
+        
         try:
-            
             option = int(input("Select an option: "))
         except ValueError:
+            clear_screen() 
             print("\nPlease enter a valid number.")
+            clear_screen()  
             continue 
-
-        if option == 1:
-            clear_screen() 
-            BuyWithCoupon()
-
-        if option == 2:
-            clear_screen() 
-            Coupon20()
-        elif option == 0:
-            clear_screen() 
+        
+        print(option)
+        
+        if option == 0:
+            clear_screen()
             print("\nAdios..")
-            break 
+            break
+    
+
+        elif option == 1:
+            clear_screen()   
+            BuyWithCoupon()
+           
+
+        elif option == 2:
+            clear_screen()
+            Coupon20()
         else:
-            print("\nInvalid option, try again.")    
+            clear_screen()
+            print("\nPlease enter a valid number.")
+            
+        
+       
+            
 
 if __name__ == "__main__":
     main()
