@@ -1,8 +1,6 @@
 
 
 # Note
-# I apologize because when i registered my user name in Google Forms for the first time, it took me approximatly 
-# 4 hours to finish, and the repo was closed u.u, thanks for your time.
 
 # Odoo Intern Technical Challenge
 
@@ -61,3 +59,8 @@ Your submission will be evaluated based on the following:
 4. Ensure your commit history is clear and descriptive (use atomic and descriptive commits).
 
 Good luck!
+
+
+Note:
+
+I apologize because when i registered my user name in Google Forms for the first time, it took me approximatly 4 hours to finish, and the repo was closed u.u, thanks for your time.
