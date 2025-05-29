@@ -75,7 +75,7 @@
             const formatPrice = (price) => {
             // Convertir a número y formatear
             const number = parseFloat(price);
-            return number.toLocaleString('es-ES', {
+            return number.toLocaleString('es-US', {   // es-US insted es-ES
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
                 });
